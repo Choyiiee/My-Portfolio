@@ -204,39 +204,26 @@ function App() {
             <div className="wide-project-card">
               <div className="proj-left-frame">
                 <span className="proj-number-tag">PROJ // 01</span>
-                <h3>Cleaning-bliss</h3>
+                <h3><a href="react-primero-ui.vercel.app" target="_blank" rel="noreferrer">Primero UI</a> that help the user to have a seamless experience to see the showcases that Primero Coffee to offer.</h3>
                 <div className="proj-pills-row">
-                  <span>React</span><span>Laravel</span><span>MySQL</span>
+                  <span>React</span>
                 </div>
               </div>
               <div className="proj-right-desc">
-                <p>A Laundry System that provides a seamless experience for customers to schedule pickups, track orders, and manage their laundry needs efficiently.</p>
+                <p>A Coffee Shop UI that provides a seamless experience for customers to schedule pickups, track orders, and manage their laundry needs efficiently.</p>
               </div>
             </div>
 
             <div className="wide-project-card">
               <div className="proj-left-frame">
                 <span className="proj-number-tag">PROJ // 02</span>
-                <h3>Floodwatch</h3>
+                <h3>Mapiles DTR</h3>
                 <div className="proj-pills-row">
-                  <span>Flutter</span><span>Firebase</span><span>Dart</span>
+                  <span>React</span><span>Laravel</span><span>PostgreSQL</span>
                 </div>
               </div>
               <div className="proj-right-desc">
-                <p>Cross-platform mobile application built with a Firebase backend and standard native UI structures that helps community users stay safe with localized flood risks.</p>
-              </div>
-            </div>
-
-            <div className="wide-project-card">
-              <div className="proj-left-frame">
-                <span className="proj-number-tag">PROJ // 03</span>
-                <h3>LHS-WASTE-MANAGEMENT</h3>
-                <div className="proj-pills-row">
-                  <span>PHP</span><span>MySQL</span><span>JavaScript</span>
-                </div>
-              </div>
-              <div className="proj-right-desc">
-                <p>A data-rich, streamlined enterprise dashboard system featuring functional charts, relational tables, and rigid role-based access control metrics.</p>
+                <p>Cross-platform DTR Application built with a Laravel backend and React UI structures that helps a company to have a systematic Date, Time, and Record System.</p>
               </div>
             </div>
           </div>
