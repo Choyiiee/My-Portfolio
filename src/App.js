@@ -200,19 +200,28 @@ function App() {
             <h2 className="section-main-title">Selected Projects</h2>
           </div>
           
-          <div className="editorial-projects-block">
-            <div className="wide-project-card">
-              <div className="proj-left-frame">
-                <span className="proj-number-tag">PROJ // 01</span>
-                <h3><a href="react-primero-ui.vercel.app" target="_blank" rel="noreferrer">Primero UI</a> that help the user to have a seamless experience to see the showcases that Primero Coffee to offer.</h3>
-                <div className="proj-pills-row">
-                  <span>React</span>
-                </div>
-              </div>
-              <div className="proj-right-desc">
-                <p>A Coffee Shop UI that provides a seamless experience for customers to schedule pickups, track orders, and manage their laundry needs efficiently.</p>
-              </div>
-            </div>
+         <div className="editorial-projects-block">
+  <a 
+    href="https://react-primero-ui.vercel.app" 
+    target="_blank" 
+    rel="noreferrer" 
+    className="wide-project-card-link"
+    style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+  >
+    <div className="wide-project-card">
+      <div className="proj-left-frame">
+        <span className="proj-number-tag">PROJ // 01</span>
+        <h3>Primero Coffee Shop</h3>
+        <div className="proj-pills-row">
+          <span>React</span>
+        </div>
+      </div>
+      <div className="proj-right-desc">
+        <p>A Coffee Shop UI that provides a seamless experience for customers to schedule pickups, track orders, and manage their laundry needs efficiently.</p>
+      </div>
+    </div>
+  </a>
+</div>
 
             <div className="wide-project-card">
               <div className="proj-left-frame">
@@ -226,7 +235,7 @@ function App() {
                 <p>Cross-platform DTR Application built with a Laravel backend and React UI structures that helps a company to have a systematic Date, Time, and Record System.</p>
               </div>
             </div>
-          </div>
+
 
           <div className="editorial-github-footer">
             <div className="git-left">
