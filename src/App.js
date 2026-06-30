@@ -235,8 +235,8 @@ function App() {
                 <p>Cross-platform DTR Application built with a Laravel backend and React UI structures that helps a company to have a systematic Date, Time, and Record System.</p>
               </div>
             </div>
-
-
+            <br />
+            <br />
           <div className="editorial-github-footer">
             <div className="git-left">
               <span>EXPLORE SOURCE ARCHIVES</span>
