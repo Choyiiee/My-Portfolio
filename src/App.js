@@ -284,6 +284,7 @@ function App() {
               </div>
             </a>
           </div>
+          <div className="editorial-projects-block"></div>
           <a
             href="https://dtr-mapiles.onrender.com"
             target="_blank"
@@ -294,25 +295,22 @@ function App() {
               color: "inherit",
               display: "block",
             }}
-          ></a>
-          <div className="wide-project-card">
-            <div className="proj-left-frame">
-              <span className="proj-number-tag">PROJ // 02</span>
-              <h3>Mapiles DTR</h3>
-              <div className="proj-pills-row">
-                <span>React</span>
-                <span>Laravel</span>
-                <span>PostgreSQL</span>
+          >
+            <div className="wide-project-card">
+              <div className="proj-left-frame">
+                <span className="proj-number-tag">PROJ // 02</span>
+                <h3>Mapiles DTR</h3>
+                <div className="proj-pills-row">
+                  <span>React</span>
+                  <span>Laravel</span>
+                  <span>PostgreSQL</span>
+                </div>
+              </div>
+              <div className="proj-right-desc">
+                <p>Cross-platform DTR Application built with a Laravel backend and React UI structures that helps a company to have a systematic Date, Time, and Record System.</p>
               </div>
             </div>
-            <div className="proj-right-desc">
-              <p>
-                Cross-platform DTR Application built with a Laravel backend and
-                React UI structures that helps a company to have a systematic
-                Date, Time, and Record System.
-              </p>
-            </div>
-          </div>
+          </a>
           <br />
           <br />
           <div className="editorial-github-footer">
