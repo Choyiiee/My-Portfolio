@@ -1,9 +1,16 @@
 import React from "react";
+import { Form, Input, Button } from "antd";
+import { SendOutlined, MailOutlined, LinkedinOutlined, GithubOutlined } from "@ant-design/icons";
+import useScrollReveal from "../../utils/useScrollReveal";
 import "./Contact.css";
 
-function Contact({ formStatus, handleSubmit }) {
+const { TextArea } = Input;
+
+function Contact({ formStatus, handleSubmit, formRef }) {
+  const ref = useScrollReveal();
+
   return (
-    <section id="contact" className="connect-section">
+    <section id="contact" className="connect-section reveal" ref={ref}>
       <div className="section-header-row">
         <span className="section-index">05 / CONNECT</span>
         <h2 className="section-main-title">
@@ -14,53 +21,63 @@ function Contact({ formStatus, handleSubmit }) {
 
       <div className="connect-split-layout">
         <div className="connect-form-panel">
-          <form onSubmit={handleSubmit} className="minimal-form">
+          <Form
+            ref={formRef}
+            onFinish={handleSubmit}
+            layout="vertical"
+            className="minimal-form"
+          >
             <div className="input-group-row">
-              <div className="input-block">
-                <label>NAME</label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Juan Dela Cruz"
-                  required
-                />
-              </div>
-              <div className="input-block">
-                <label>EMAIL ADDRESS</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="juan@example.com"
-                  required
-                />
-              </div>
+              <Form.Item
+                name="name"
+                label="NAME"
+                rules={[{ required: true, message: "Please enter your name" }]}
+                className="input-block"
+              >
+                <Input placeholder="Juan Dela Cruz" />
+              </Form.Item>
+              <Form.Item
+                name="email"
+                label="EMAIL ADDRESS"
+                rules={[
+                  { required: true, message: "Please enter your email" },
+                  { type: "email", message: "Please enter a valid email" },
+                ]}
+                className="input-block"
+              >
+                <Input placeholder="juan@example.com" />
+              </Form.Item>
             </div>
-            <div className="input-block">
-              <label>SUBJECT MATTER</label>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Project Inquiry / Collaboration"
-                required
-              />
-            </div>
-            <div className="input-block">
-              <label>MESSAGE TEXT</label>
-              <textarea
-                name="message"
-                placeholder="Describe your concept or structural goals..."
-                required
-              ></textarea>
-            </div>
+            <Form.Item
+              name="subject"
+              label="SUBJECT MATTER"
+              rules={[{ required: true, message: "Please enter a subject" }]}
+              className="input-block"
+            >
+              <Input placeholder="Project Inquiry / Collaboration" />
+            </Form.Item>
+            <Form.Item
+              name="message"
+              label="MESSAGE TEXT"
+              rules={[{ required: true, message: "Please enter your message" }]}
+              className="input-block"
+            >
+              <TextArea placeholder="Describe your concept or structural goals..." rows={4} />
+            </Form.Item>
             <div className="form-action-footer">
-              <button type="submit" className="form-submit-btn">
+              <Button
+                type="primary"
+                htmlType="submit"
+                icon={<SendOutlined />}
+                className="form-submit-btn"
+              >
                 {formStatus}
-              </button>
+              </Button>
               <span className="form-notice">
                 TYPICAL RESPONSE TIME // 24 HOURS
               </span>
             </div>
-          </form>
+          </Form>
         </div>
 
         <div className="connect-cards-panel">
@@ -69,7 +86,7 @@ function Contact({ formStatus, handleSubmit }) {
               href="mailto:johnavilawork@gmail.com"
               className="row-link-item"
             >
-              <span className="link-tag">EMAIL</span>
+              <span className="link-tag"><MailOutlined /> EMAIL</span>
               <span className="link-text">johnavilawork@gmail.com</span>
             </a>
             <a
@@ -78,7 +95,7 @@ function Contact({ formStatus, handleSubmit }) {
               rel="noreferrer"
               className="row-link-item"
             >
-              <span className="link-tag">LINKEDIN</span>
+              <span className="link-tag"><LinkedinOutlined /> LINKEDIN</span>
               <span className="link-text">John Botchoy B. Avila</span>
             </a>
             <a
@@ -87,7 +104,7 @@ function Contact({ formStatus, handleSubmit }) {
               rel="noreferrer"
               className="row-link-item"
             >
-              <span className="link-tag">GITHUB</span>
+              <span className="link-tag"><GithubOutlined /> GITHUB</span>
               <span className="link-text">github.com/Choyiiee</span>
             </a>
           </div>

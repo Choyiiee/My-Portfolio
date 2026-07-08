@@ -1,10 +1,13 @@
 import React from "react";
 import profileImg from "../../assets/me1.jpg";
+import useScrollReveal from "../../utils/useScrollReveal";
 import "./Hero.css";
 
 function Hero() {
+  const ref = useScrollReveal();
+
   return (
-    <header id="hero" className="editorial-hero">
+    <header id="hero" className="editorial-hero reveal" ref={ref}>
       <div className="hero-text-side">
         <div className="hero-badge-row">
           FULL STACK DEVELOPER // UI DESIGNER

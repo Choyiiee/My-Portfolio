@@ -1,9 +1,14 @@
 import React from "react";
+import { Card, Button } from "antd";
+import { EyeOutlined, DownloadOutlined } from "@ant-design/icons";
+import useScrollReveal from "../../utils/useScrollReveal";
 import "./About.css";
 
 function About({ handleViewResume, handleDownloadResume }) {
+  const ref = useScrollReveal();
+
   return (
-    <section id="about" className="profile-section">
+    <section id="about" className="profile-section reveal" ref={ref}>
       <div className="section-header-row">
         <span className="section-index">02 / PROFILE</span>
         <h2 className="section-main-title">
@@ -41,25 +46,34 @@ function About({ handleViewResume, handleDownloadResume }) {
         </div>
 
         <div className="profile-interactive-column">
-          <div className="floating-cv-card">
+          <Card
+            className="floating-cv-card"
+            bordered={false}
+          >
             <span className="card-decor-tag">CREDENTIALS</span>
-            <h3>Curriculum Vitae</h3>
-            <p>
+            <h3 className="cv-card-title">Curriculum Vitae</h3>
+            <p className="cv-card-text">
               Access full structural details regarding academic timeline,
               technical benchmarks, and training histories.
             </p>
             <div className="cv-actions-stack">
-              <button className="btn-solid-dark" onClick={handleViewResume}>
+              <Button
+                type="primary"
+                icon={<EyeOutlined />}
+                onClick={handleViewResume}
+                block
+              >
                 VIEW DIGITAL CV
-              </button>
-              <button
-                className="btn-outline-dark"
+              </Button>
+              <Button
+                icon={<DownloadOutlined />}
                 onClick={handleDownloadResume}
+                block
               >
                 ↓ DOWNLOAD AS PDF
-              </button>
+              </Button>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </section>

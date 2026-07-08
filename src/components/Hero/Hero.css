@@ -8,6 +8,14 @@
   border-bottom: 1px solid var(--border-muted);
 }
 
+.hero-accent-line {
+  width: 120px;
+  height: 4px;
+  background: var(--accent-orange);
+  margin: 2.5rem 0;
+  border-radius: 2px;
+}
+
 .hero-badge-row {
   font-size: 0.75rem;
   font-weight: 700;
@@ -28,13 +36,6 @@
 .stroke-text {
   color: transparent;
   -webkit-text-stroke: 1px var(--text-dark-head);
-}
-
-.hero-accent-line {
-  width: 120px;
-  height: 4px;
-  background: var(--accent-orange);
-  margin: 2.5rem 0;
 }
 
 .hero-editorial-footer {
@@ -72,6 +73,7 @@
   border-radius: 4px;
   white-space: nowrap;
   box-shadow: 0 4px 12px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 .action-btn-primary:hover {
@@ -90,6 +92,7 @@
   border-bottom: 2px solid var(--btn-secondary-border);
   padding-bottom: 4px;
   white-space: nowrap;
+  transition: border-color 0.3s ease, color 0.3s ease, padding-bottom 0.3s ease;
 }
 
 .action-btn-secondary:hover {
@@ -107,6 +110,9 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 15px var(--card-shadow);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .hero-profile-img {
@@ -115,6 +121,8 @@
   object-fit: cover;
   border-radius: 4px;
   filter: grayscale(20%) contrast(1.05);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .reactive-photo-frame:hover {
@@ -134,6 +142,11 @@
     text-align: center;
   }
 
+  .hero-accent-line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .reactive-photo-frame {
     max-width: 320px;
     margin: 0 auto;
@@ -143,5 +156,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+    width: 100%;
   }
 }

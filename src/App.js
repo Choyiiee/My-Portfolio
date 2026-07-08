@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { ConfigProvider, theme as antdTheme } from "antd";
 import "./App.css";
+import { lightTheme, darkTheme } from "./theme";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -11,6 +13,8 @@ import Footer from "./components/Footer/Footer";
 function App() {
   const [formStatus, setFormStatus] = useState("SEND MESSAGE →");
   const [isDark, setIsDark] = useState(false);
+  const [sidebarExpanded, setSidebarExpanded] = useState(false);
+  const formRef = useRef(null);
 
   useEffect(() => {
     if (isDark) {
@@ -20,20 +24,20 @@ function App() {
     }
   }, [isDark]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (values) => {
     setFormStatus("SENDING...");
-    const form = e.target;
-    const data = new FormData(form);
     try {
       const response = await fetch("https://formspree.io/f/mvzywgdb", {
         method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
       });
       if (response.ok) {
         setFormStatus("MESSAGE SENT ✓");
-        form.reset();
+        formRef.current?.resetFields();
       } else {
         setFormStatus("ERROR // TRY AGAIN");
       }
@@ -56,20 +60,31 @@ function App() {
   };
 
   return (
-    <div className="portfolio-wrapper">
-      <Sidebar isDark={isDark} setIsDark={setIsDark} />
-      <main className="main-content">
-        <Hero />
-        <About
-          handleViewResume={handleViewResume}
-          handleDownloadResume={handleDownloadResume}
-        />
-        <Skills />
-        <Projects />
-        <Contact formStatus={formStatus} handleSubmit={handleSubmit} />
-        <Footer />
-      </main>
-    </div>
+    <ConfigProvider
+      theme={{
+        ...(isDark ? darkTheme : lightTheme),
+        algorithm: isDark ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
+      }}
+    >
+      <div className="portfolio-wrapper">
+        <Sidebar isDark={isDark} setIsDark={setIsDark} expanded={sidebarExpanded} onExpandChange={setSidebarExpanded} />
+        <main className={`main-content ${sidebarExpanded ? "shifted" : ""}`}>
+          <Hero />
+          <About
+            handleViewResume={handleViewResume}
+            handleDownloadResume={handleDownloadResume}
+          />
+          <Skills />
+          <Projects />
+          <Contact
+            formStatus={formStatus}
+            handleSubmit={handleSubmit}
+            formRef={formRef}
+          />
+          <Footer />
+        </main>
+      </div>
+    </ConfigProvider>
   );
 }
 

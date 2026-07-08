@@ -1,9 +1,36 @@
 import React from "react";
+import { Tag } from "antd";
+import useScrollReveal from "../../utils/useScrollReveal";
 import "./Skills.css";
 
+const skillCategories = [
+  {
+    num: "01",
+    title: "FRONTEND / INTERFACE",
+    items: ["React", "HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
+  },
+  {
+    num: "02",
+    title: "BACKEND / LOGIC",
+    items: ["Laravel", "PHP", "AdonisJS", "Firebase", "Node.js"],
+  },
+  {
+    num: "03",
+    title: "DATA MANAGEMENT",
+    items: ["MySQL", "Firestore", "Redis"],
+  },
+  {
+    num: "04",
+    title: "MOBILE ARCHITECTURE",
+    items: ["Flutter", "Dart", "Firebase Auth"],
+  },
+];
+
 function Skills() {
+  const ref = useScrollReveal();
+
   return (
-    <section id="skills" className="stack-section">
+    <section id="skills" className="stack-section reveal" ref={ref}>
       <div className="section-header-row">
         <span className="section-index">03 / STACK</span>
         <h2 className="section-main-title">Technical Infrastructure</h2>
@@ -14,57 +41,21 @@ function Skills() {
       </p>
 
       <div className="horizontal-stack-layout">
-        <div className="stack-row-item">
-          <div className="stack-label-block">
-            <span className="stack-num">01</span>
-            <h4>FRONTEND / INTERFACE</h4>
+        {skillCategories.map((cat) => (
+          <div className="stack-row-item" key={cat.num}>
+            <div className="stack-label-block">
+              <span className="stack-num">{cat.num}</span>
+              <h4>{cat.title}</h4>
+            </div>
+            <div className="stack-pills-container">
+              {cat.items.map((item) => (
+                <Tag key={item} className="skill-tag">
+                  {item}
+                </Tag>
+              ))}
+            </div>
           </div>
-          <div className="stack-pills-container">
-            <span>React</span>
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>JavaScript</span>
-            <span>Tailwind CSS</span>
-          </div>
-        </div>
-
-        <div className="stack-row-item">
-          <div className="stack-label-block">
-            <span className="stack-num">02</span>
-            <h4>BACKEND / LOGIC</h4>
-          </div>
-          <div className="stack-pills-container">
-            <span>Laravel</span>
-            <span>PHP</span>
-            <span>AdonisJS</span>
-            <span>Firebase</span>
-            <span>Node.js</span>
-          </div>
-        </div>
-
-        <div className="stack-row-item">
-          <div className="stack-label-block">
-            <span className="stack-num">03</span>
-            <h4>DATA MANAGEMENT</h4>
-          </div>
-          <div className="stack-pills-container">
-            <span>MySQL</span>
-            <span>Firestore</span>
-            <span>Redis</span>
-          </div>
-        </div>
-
-        <div className="stack-row-item">
-          <div className="stack-label-block">
-            <span className="stack-num">04</span>
-            <h4>MOBILE ARCHITECTURE</h4>
-          </div>
-          <div className="stack-pills-container">
-            <span>Flutter</span>
-            <span>Dart</span>
-            <span>Firebase Auth</span>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

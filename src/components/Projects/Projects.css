@@ -3,11 +3,8 @@
   border-bottom: 1px solid var(--border-muted);
 }
 
-.editorial-projects-block {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 4rem;
+.wide-project-card-link + .wide-project-card-link {
+  margin-top: 1.5rem;
 }
 
 .wide-project-card {
@@ -19,6 +16,9 @@
   border-radius: 8px;
   border: 1px solid var(--border-muted);
   box-shadow: 0 4px 10px var(--card-shadow);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .wide-project-card:hover {
@@ -50,14 +50,14 @@
   gap: 0.4rem;
 }
 
-.proj-pills-row span {
-  background: var(--bg-card-inner);
-  border: 1px solid var(--border-muted);
-  padding: 4px 10px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  border-radius: 4px;
-  color: var(--text-charcoal);
+.proj-pill-tag {
+  padding: 4px 10px !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  border-radius: 4px !important;
+  border: 1px solid var(--border-muted) !important;
+  margin: 0 !important;
+  cursor: default !important;
 }
 
 .proj-right-desc {
@@ -83,6 +83,8 @@
   gap: 2rem;
   flex-wrap: wrap;
   box-shadow: 0 6px 20px var(--card-shadow);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .editorial-github-footer:hover {
@@ -107,6 +109,10 @@
   font-weight: 400;
 }
 
+.git-left a:hover {
+  color: var(--accent-orange);
+}
+
 .git-circle-btn {
   width: 90px;
   height: 90px;
@@ -120,6 +126,8 @@
   font-weight: 700;
   text-decoration: none;
   flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              background 0.3s ease, color 0.3s ease;
 }
 
 .git-circle-btn:hover {
