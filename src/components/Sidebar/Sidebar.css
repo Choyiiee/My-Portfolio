@@ -1,0 +1,122 @@
+.side-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--bg-sand);
+  border-right: 1px solid var(--border-muted);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.brand-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--text-dark-head);
+}
+
+.brand-logo span {
+  color: var(--accent-orange);
+}
+
+.theme-toggle {
+  background: var(--bg-card-inner);
+  border: 1px solid var(--border-muted);
+  color: var(--text-charcoal);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  align-self: flex-start;
+  box-shadow: 0 2px 4px var(--card-shadow);
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+.side-badge {
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-dark-head);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card-inner);
+  padding: 10px 14px;
+  border-radius: 4px;
+  border: 1px solid var(--border-muted);
+  width: max-content;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-orange);
+  border-radius: 50%;
+  animation: pulseNode 2s infinite;
+}
+
+@keyframes pulseNode {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+.side-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.side-nav-links a {
+  text-decoration: none;
+  color: var(--text-charcoal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.side-nav-links a:hover {
+  color: var(--accent-orange);
+  padding-left: 8px;
+}
+
+.side-footer-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  opacity: 0.5;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1100px) {
+  .side-panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-muted);
+    padding: 2rem 6%;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .side-nav-links,
+  .side-footer-tag,
+  .side-badge {
+    display: none;
+  }
+}

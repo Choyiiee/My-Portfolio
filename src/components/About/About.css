@@ -1,0 +1,147 @@
+.profile-section {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.section-header-row {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.section-index {
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+  margin-top: 0.5rem;
+  white-space: nowrap;
+}
+
+.section-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  color: var(--text-dark-head);
+  line-height: 1.25;
+  max-width: 700px;
+}
+
+.profile-layout-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+}
+
+.editorial-paragraph {
+  margin-bottom: 3rem;
+}
+
+.editorial-paragraph h5 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+}
+
+.editorial-paragraph p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-charcoal);
+}
+
+.profile-interactive-column {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.floating-cv-card {
+  background: var(--bg-sand);
+  border: 1px solid var(--border-muted);
+  padding: 3rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+.floating-cv-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--accent-orange);
+  box-shadow: 0 12px 30px var(--card-shadow);
+}
+
+.card-decor-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.floating-cv-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--text-dark-head);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.cv-actions-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn-solid-dark {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+  padding: 14px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-solid-dark:hover {
+  background: var(--accent-orange);
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  border: 1px solid var(--text-dark-head);
+  color: var(--text-dark-head);
+  padding: 13px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-outline-dark:hover {
+  background: var(--text-dark-head);
+  color: var(--bg-canvas);
+  transform: scale(1.02);
+}
+
+@media (max-width: 1100px) {
+  .profile-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .profile-interactive-column {
+    justify-content: flex-start;
+  }
+
+  .floating-cv-card {
+    max-width: 100%;
+  }
+}

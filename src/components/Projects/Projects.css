@@ -1,0 +1,136 @@
+.creations-section {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.editorial-projects-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.wide-project-card {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 3rem;
+  padding: 3.5rem 2.5rem;
+  background: var(--bg-sand);
+  border-radius: 8px;
+  border: 1px solid var(--border-muted);
+  box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+.wide-project-card:hover {
+  border-color: var(--accent-orange);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px var(--card-shadow);
+}
+
+.proj-number-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.wide-project-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--text-dark-head);
+  margin-bottom: 1.5rem;
+}
+
+.proj-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.proj-pills-row span {
+  background: var(--bg-card-inner);
+  border: 1px solid var(--border-muted);
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 4px;
+  color: var(--text-charcoal);
+}
+
+.proj-right-desc {
+  display: flex;
+  align-items: center;
+}
+
+.proj-right-desc p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-charcoal);
+  opacity: 0.9;
+}
+
+.editorial-github-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--text-dark-head);
+  padding: 3rem 4rem;
+  border-radius: 8px;
+  color: var(--bg-canvas);
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-shadow: 0 6px 20px var(--card-shadow);
+}
+
+.editorial-github-footer:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 30px var(--card-shadow);
+}
+
+.git-left span {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.git-left a {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--bg-canvas);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.git-circle-btn {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--accent-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.git-circle-btn:hover {
+  transform: rotate(45deg) scale(1.1);
+  background: #ffffff;
+  color: #000000;
+}
+
+@media (max-width: 1100px) {
+  .wide-project-card {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
